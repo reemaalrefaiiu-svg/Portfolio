@@ -319,6 +319,93 @@
       margin-left: 0.3rem;
       font-size: 0.85em;
     }
+    /* -------- Sticky Footer Fix -------- */
+
+/* -------- Projects (3 Cards Responsive + Hover) -------- */
+.projects-section{
+  background:#f5f7fb;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card{
+  background:#ffffff;
+  border-radius:16px;
+  padding:16px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.08);
+  border:1px solid #e7ebf0;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.project-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 35px rgba(0,0,0,0.12);
+}
+
+.project-card img{
+  border-radius:12px;
+  margin-bottom:10px;
+}
+
+.project-card h3{
+  font-size:1.05rem;
+  margin-bottom:6px;
+  color:#003c73;
+}
+
+.project-card p{
+  color:#555;
+  font-size:0.95rem;
+}
+
+.project-actions{
+  margin-top:10px;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.project-btn{
+  padding:8px 14px;
+  border-radius:30px;
+  border:1px solid #d5d9e3;
+  text-decoration:none;
+  font-size:0.85rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.25s;
+}
+
+.project-btn.primary{
+  background:linear-gradient(135deg,#b4007f,#ff5a2f);
+  color:#fff;
+  border:none;
+}
+
+.project-btn.primary:hover{
+  filter:brightness(1.1);
+}
+
+.project-btn.secondary:hover{
+  background:#f1f4ff;
+}
+
+@media (max-width:900px){
+  .projects-container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width:600px){
+  .projects-container{
+    grid-template-columns:1fr;
+  }
+}
+
 
 
     .skills-layout {
@@ -434,6 +521,59 @@
       margin-inline: auto;
     }
 
+/* EXPERIENCE SECTION  */
+
+#experience .experience-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 2rem;
+}
+
+#experience .exp-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 22px 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#experience .exp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+#experience .exp-header {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+}
+
+#experience .exp-list {
+  padding-left: 18px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+#experience .exp-list li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/*  RESPONSIVE  */
+@media (max-width: 900px) {
+  #experience .experience-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #experience .experience-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
@@ -544,7 +684,7 @@
 
   <header class="site-header">
     <div class="container header-container">
-      <div class="logo">REEMA</div>
+      <div class="logo">REEMA Portfolio</div>
 
       <nav class="main-nav">
         <ul>
@@ -558,8 +698,7 @@
       </nav>
     </div>
   </header>
-
-  
+   
   <section id="home" class="hero">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
@@ -580,7 +719,7 @@
     </div>
   </section>
 
-  <!-- ===== About ===== -->
+  <!--  About  -->
   <section id="about" class="section about-us">
     <div class="container about-grid">
       <div class="about-image">
@@ -606,72 +745,69 @@
     </div>
   </section>
 
-  <!-- ===== Projects ===== -->
-  <section id="projects" class="section projects-section">
-    <div class="container">
-      <h2 class="section-title">Projects</h2>
 
-      <div class="cards-grid">
-        <article class="card">
-          <div class="project-meta">2023 – 2024  </div>
-          <h3>Donation Website</h3>
-          <p>
-            A responsive donation website that allows users to explore different causes
-            and donate easily. Focused on clean layout, and
-            a friendly user experience.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="project-meta">2023 – 2024  </div>
-          <h3>Task Management Website</h3>
-          <p>
-            A task management website that helps users organize and track tasks,
-            with features like priorities and status.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="project-meta">Personal </div>
-          <h3>Cloud Learning Projects</h3>
-          <p>
-            Hands-on labs and mini projects exploring Azure services such as storage,
-            virtual machines.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-  <section id="experience" class="section">
+  <!--  Professional Experience  -->
+<section id="experience" class="section">
   <div class="container">
-    <h2 class="section-title">Experience</h2>
 
-    <div class="cards-grid">
+    <h2 class="section-title">Professional Experience</h2>
 
-      <article class="card">
-        <h3>ServiceNow Migration Support</h3>
-        <p>
-          Testing end-to-end workflow, vaildation.
-        </p>
-      </article>
+    <div class="experience-header" style="text-align:center; margin-bottom:1.5rem;">
+      <h3 style="margin:0;">
+        SABIC – Global Business Applications (Operations & Support)
+      </h3>
+      <p style="margin:4px 0; font-weight:600;">
+         22 June – 3 Jan
+      </p>
+      <p style="margin:0; color:#555;">
+        Intern — Jubail, Saudi Arabia
+      </p>
+    </div>
 
-      <article class="card">
-        <h3>SharePoint Online Migration</h3>
-        <p>
-          Intranet design, documention management, Gave training sessions about PowerPlatform
-        </p>
-      </article>
+    <!-- EXPERIENCE CARDS -->
+    <div class="experience-cards">
 
-      <article class="card">
-        <h3>IT & DT Tech Portal</h3>
-        <p>
-          Develop and Designed portal
-        </p>
-      </article>
+      <!-- ServiceNow -->
+      <div class="exp-card">
+        <div class="exp-header">ServiceNow</div>
+        <ul class="exp-list">
+          <li><strong>INC Management</strong> 
+            <br> Handled 35+ incidents</li>
+          <li><strong>Functional Workflow Testing</strong> 
+            <br>Executed 70+ scenarios to validate approval, rejection, and closure workflows</li>
+          <li><strong>User Schedule Mapping</strong> 
+            <br> Mapped user schedules across 7 countries</li>
+          <li><strong>Incident Assignment Accuracy</strong> 
+            <br> Improved routing of unassigned incidents to correct groups</li>
+          <li><strong>Navigation Taxonomy Enhancement</strong> 
+            <br> Improved menu using HTML & CSS</li>
+        </ul>
+      </div>
+
+      <!-- SharePoint -->
+      <div class="exp-card">
+        <div class="exp-header">SharePoint</div>
+        <ul class="exp-list">
+          <li><strong>Intranet Design</strong><br>  Built SharePoint Modern intranet pages</li>
+          <li><strong>Power Platform Sessions</strong><br> Delivered training sessions for users</li>
+          <li><strong>Archiving Solutions</strong> <br>Conducted storage analysis for 500 TB of ECM content and prepared recommendations</li>
+          <li><strong>Site Usage Review</strong>  <br>Analyzed SharePoint site utilization for migration strategy</li>
+        </ul>
+      </div>
+
+      <!-- IT & DT TECH -->
+      <div class="exp-card">
+        <div class="exp-header">IT & DT Tech</div>
+        <ul class="exp-list">
+          <li><strong>Intranet Design</strong> <br> Designed and developed internal portal</li>
+          <li>Using HTML, CSS, and jQuery</li>
+        </ul>
+      </div>
 
     </div>
   </div>
 </section>
+
 
   <!-- ===== Skills ===== -->
   <section id="skills" class="section">
@@ -684,11 +820,10 @@
           <ul class="skills-list">
             <li>Web Development: HTML, CSS, JavaScript, Python</li>
             <li>Microsoft Azure (AZ-900 Certified)</li>
-            <li>React (Foundations),frontend.png</li>
+            <li>React (Foundations)</li>
             <li>Excel & basic Data Analysis</li>
             <li>PowerPlatform</li>
             <li>Basic Data Visualization</li>
-            <li>MongoDB</li>
     
           </ul>
         </div>
@@ -755,6 +890,9 @@
             <li>Interactive UI with JavaScript</li>
             <li>Semantic HTML & accessibility</li>
           </ul>
+        </div>
+          <div class="tab-img-box">
+          <img src="images/Udacity.png" alt="AZ-900 Certification">
         </div>
       </div>
     </div>
@@ -850,7 +988,7 @@
       <article class="card">
         <h3>Recommendation Letter</h3>
         <p>Download my official recommendation letter.</p>
-        <a href="images/Reema Recommendation Letter.pdf" target="_blank" class="project-link">
+        <a href="images/Sabic_Recommendation.pdf" target="_blank" class="project-link">
           View PDF
         </a>
       </article>
@@ -859,7 +997,7 @@
       <article class="card">
         <h3>Recommendation Letter 2</h3>
         <p>Download my official recommendation letter.</p>
-        <a href="images/Sabic_Recommendation.pdf" target="_blank" class="project-link">
+        <a href="images/Reema Recommendation Letter.pdf" target="_blank" class="project-link">
           View PDF
         </a>
       </article>
@@ -876,8 +1014,8 @@
       </p>
       <div class="contact-links">
        
-        <a href="#" target="">LinkedIn</a> |
-        <a href="#" target="">GitHub</a>
+        <a href="#" target="http://www.linkedin.com/in/reema-alrefai">LinkedIn</a> |
+        <a href="#" target="https://github.com/reemaalrefaiiu-svg?tab=overview&from=2025-11-01&to=2025-11-30">GitHub</a>
       </div>
     </div>
   </section>
